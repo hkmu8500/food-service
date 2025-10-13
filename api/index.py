@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
             conn = get_connection()
             init_db(conn)
             count = increment_and_get_count(conn)
-            message = f"Hello, this is homepage for ordering food. Visits: {count}"
+            message = f"Hello, this is homepage for ordering food service. Visits: {count}"
 
             self.send_response(200)
             self.send_header('Content-type','text/plain')
