@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
             conn = get_connection()
             init_db(conn)
             count = increment_and_get_count(conn)
-            message = f'''Hello, this is homepage for ordering food service. Visits: {count},
+            message = f'''Hello everyone, this is homepage for ordering food service. Visits: {count},
             DB_PATH: {DB_PATH}
             '''
 
