@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler
-from .db import get_connection, init_db, increment_and_get_count
+from .db import get_connection, init_db, increment_and_get_count, DB_PATH
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -7,7 +7,9 @@ class handler(BaseHTTPRequestHandler):
             conn = get_connection()
             init_db(conn)
             count = increment_and_get_count(conn)
-            message = f"Hello, this is homepage for ordering food service. Visits: {count}"
+            message = f'''Hello, this is homepage for ordering food service. Visits: {count},
+            DB_PATH: {DB_PATH}
+            '''
 
             self.send_response(200)
             self.send_header('Content-type','text/plain')
