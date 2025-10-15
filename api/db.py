@@ -8,8 +8,8 @@ def _default_db_path() -> str:
     if env_path:
         return env_path
 
-    if os.getenv("VERCEL"):
-        return "/tmp/database.sqlite"
+    # if os.getenv("VERCEL"):
+    #     return "/tmp/database.sqlite"
 
     return str(Path(__file__).resolve().parent.parent / "database.sqlite")
 
